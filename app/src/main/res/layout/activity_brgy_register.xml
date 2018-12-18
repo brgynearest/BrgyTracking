@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".brgy_register">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+
+        <EditText
+            android:id="@+id/text_brgyname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Brgy Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/text_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Password"
+            android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/text_brgy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Contact No."
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="Longitude"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/lattitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="Lattitude"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btn_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Locate my Location"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="231dp" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_marginTop="10dp"
+            android:layout_width="216dp"
+            android:layout_height="wrap_content"
+            android:text="REGISTER"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="231dp" />
+
+
+
+    </LinearLayout>
+
+
+</FrameLayout>
