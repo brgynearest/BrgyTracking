@@ -29,7 +29,7 @@
             android:hint="Password" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_login"
             android:layout_width="216dp"
             android:layout_height="wrap_content"
             android:text="LOGIN"

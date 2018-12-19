@@ -31,7 +31,7 @@
             android:hint="Password"
             android:inputType="textPassword"/>
         <EditText
-            android:id="@+id/text_brgy"
+            android:id="@+id/text_contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
@@ -43,17 +43,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:enabled="false"
-            android:hint="Longitude"
-            android:inputType="numberDecimal" />
+            android:hint="Longitude" />
 
         <EditText
             android:id="@+id/lattitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:hint="Lattitude"
-            android:inputType="numberDecimal" />
+            android:hint="Lattitude" />
 
         <Button
             android:id="@+id/btn_location"
@@ -71,6 +67,31 @@
             android:text="REGISTER"
             tools:layout_editor_absoluteX="84dp"
             tools:layout_editor_absoluteY="231dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have Account?"
+                android:textColor="@android:color/black"
+                android:layout_marginRight="10dp"
+                />
+            <TextView
+                android:id="@+id/sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign in"
+                android:textColor="@android:color/holo_blue_dark"
+                android:linksClickable="true"
+                />
+
+        </LinearLayout>
 
 
 
