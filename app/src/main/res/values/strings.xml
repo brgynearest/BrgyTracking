@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Brgy Tracking</string>
     <string name="register"><u>Sign Up</u></string>
+    <string name="API_key">AIzaSyBZwMHN95o72R5355U-vL7WyhbjlRT-NJ8</string>
 </resources>

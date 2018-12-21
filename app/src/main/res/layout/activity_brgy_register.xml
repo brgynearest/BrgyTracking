@@ -43,16 +43,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:enabled="false"
             android:hint="Longitude" />
 
         <EditText
             android:id="@+id/lattitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Lattitude" />
+            android:hint="Lattitude"
+            android:enabled="false"
+            />
 
         <Button
-            android:id="@+id/btn_location"
+            android:id="@+id/btn_getlocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Locate my Location"
@@ -93,6 +96,21 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/text_lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lattitude"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/text_long"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="longitude"
+            android:textSize="18sp"
+            />
 
 
     </LinearLayout>
