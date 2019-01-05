@@ -4,8 +4,8 @@ public class brgy_login {
     public String username;
     public String password;
     public String contacts;
-    public String longitude;
-    public String lattitude;
+    public double longitude;
+    public double lattitude;
 
 
     public brgy_login(){
@@ -13,7 +13,7 @@ public class brgy_login {
 
     }
 
-    public brgy_login( String username, String password, String contacts, String longitude, String lattitude) {
+    public brgy_login( String username, String password, String contacts, double longitude, double lattitude) {
 
         this.username = username;
         this.password = password;
@@ -35,11 +35,11 @@ public class brgy_login {
         return contacts;
     }
 
-    public String getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public String getLattitude() {
+    public double getLattitude() {
         return lattitude;
     }
 

@@ -89,7 +89,6 @@ public class brgy_register extends AppCompatActivity implements ConnectionCallba
         btn_location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Toast.makeText(brgy_register.this, "This is your location!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -103,7 +102,7 @@ public class brgy_register extends AppCompatActivity implements ConnectionCallba
                 edittext_contact = findViewById(R.id.text_contact);
 
 
-                final brgy_login barangay = new brgy_login(editext_username.getText().toString(),edittext_password.getText().toString(),edittext_contact.getText().toString(),edittext_longitude.getText().toString(),edittext_lattitude.getText().toString());
+                final brgy_login barangay = new brgy_login(editext_username.getText().toString(),edittext_password.getText().toString(),edittext_contact.getText().toString(),Double.parseDouble(edittext_longitude.getText().toString().trim())  ,Double.parseDouble(edittext_lattitude.getText().toString().trim()) );
                 myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -158,18 +157,14 @@ public class brgy_register extends AppCompatActivity implements ConnectionCallba
                       Toast.makeText(brgy_register.this, "Location enabled!", Toast.LENGTH_SHORT).show();
                       edittext_longitude = findViewById(R.id.longitude);
                       edittext_lattitude = findViewById(R.id.lattitude);
-                     /* String la= String.valueOf(location.getLatitude());
-                      String lo = String.valueOf(location.getLatitude());*/
                       latitude.setText(String.valueOf(location.getLatitude()));
                       longitude.setText(String.valueOf(location.getLongitude()));
                       edittext_lattitude.setText(String.valueOf(location.getLatitude()));
                       edittext_longitude.setText(String.valueOf(location.getLongitude()));
-
                   }
                   else {
                       Toast.makeText(brgy_register.this, "Location not Found!" +
                               "", Toast.LENGTH_SHORT).show();
-
                   }
               }
           });

@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserInformation">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Information"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="24sp"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
+    android:layout_marginLeft="20dp"
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/editText_firstname"
@@ -14,7 +30,6 @@
         android:ems="10"
         android:hint="First Name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:layout_editor_absoluteX="16dp" />
 
     <EditText
@@ -76,16 +91,6 @@
         android:hint="Guardian Contact Number"
         app:layout_constraintTop_toBottomOf="@+id/editText_guardian"
         tools:layout_editor_absoluteX="16dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Information"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="25dp" />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton_register_user"
         android:layout_width="75dp"
@@ -93,7 +98,12 @@
         android:layout_marginTop="36dp"
         android:clickable="true"
         app:backgroundTint="?android:attr/colorPrimary"
-        app:layout_constraintTop_toBottomOf="@+id/editText_guardian_contact"
-        tools:layout_editor_absoluteX="294dp" />
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="20dp"
+        />
+</LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+</FrameLayout>
