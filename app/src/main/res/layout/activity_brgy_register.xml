@@ -89,27 +89,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign in"
+                android:textSize="15dp"
                 android:textColor="@android:color/holo_blue_dark"
                 android:linksClickable="true"
                 />
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/text_lat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="lattitude"
-            android:textSize="18sp"
-            />
-
-        <TextView
-            android:id="@+id/text_long"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="longitude"
-            android:textSize="18sp"
-            />
 
 
     </LinearLayout>

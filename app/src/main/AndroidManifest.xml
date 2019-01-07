@@ -33,8 +33,9 @@
         <activity android:name=".brgy_register" />
         <activity android:name=".UserInformation" />
         <activity android:name=".SampleActivity" />
-        <activity android:name=".Sample2Activity" />
-        <activity android:name=".Userinterface"></activity>
+        <activity android:name=".UserMapInterface" />
+        <activity android:name=".Userinterface" />
+        <activity android:name=".BrgyMapInterface"></activity>
     </application>
 
 </manifest>

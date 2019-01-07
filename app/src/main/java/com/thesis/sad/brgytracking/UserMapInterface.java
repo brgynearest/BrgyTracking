@@ -2,8 +2,6 @@ package com.thesis.sad.brgytracking;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -14,12 +12,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -40,12 +36,12 @@ import com.thesis.sad.brgytracking.Model.brgy_login;
 import java.io.IOException;
 import java.util.List;
 
-public class Sample2Activity extends AppCompatActivity implements OnMapReadyCallback,LocationListener,GoogleMap.OnMarkerClickListener {
+public class UserMapInterface extends AppCompatActivity implements OnMapReadyCallback,LocationListener,GoogleMap.OnMarkerClickListener {
 
     private DatabaseReference mUsers;
     private GoogleMap mMap;
     Marker marker;
-    private static final String TAG = "Sample2Activity";
+    private static final String TAG = "UserMapInterface";
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COURSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
@@ -58,7 +54,6 @@ public class Sample2Activity extends AppCompatActivity implements OnMapReadyCall
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Toast.makeText(this, "Map is Ready!", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready!");
         mMap = googleMap;
 
@@ -103,7 +98,6 @@ public class Sample2Activity extends AppCompatActivity implements OnMapReadyCall
         mapFragment.getMapAsync(this);
         ChildEventListener mChildEventListener;
         mUsers=FirebaseDatabase.getInstance().getReference("Users");
-        mUsers.push().setValue(marker);
 
        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
@@ -115,26 +109,16 @@ public class Sample2Activity extends AppCompatActivity implements OnMapReadyCall
            public void onLocationChanged(Location location) {
                double latitude = location.getLatitude();
                double longitude = location.getLongitude();
-               Geocoder geocoder = new Geocoder(getApplicationContext());
-               try{
-                   List<Address> addresses = geocoder.getFromLocation(latitude,longitude,1);
-                   String result = addresses.get(0).getLocality()+":";
-                   LatLng latLng = new LatLng(latitude,longitude);
-                   if (marker != null){
-                       marker.remove();
-                       marker = mMap.addMarker(new MarkerOptions().position(latLng).title("My Location"));
-                       CameraUpdate mylocation = CameraUpdateFactory.newLatLngZoom(latLng,18.0f );
-                       mMap.animateCamera(mylocation);
-                   }
-                   else{
-                       marker = mMap.addMarker(new MarkerOptions().position(latLng).title("You are here"));
-                       /*mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18.0f));*/
+               LatLng latLng = new LatLng(latitude,longitude);
 
-                       CameraUpdate mylocation = CameraUpdateFactory.newLatLngZoom(latLng,18.0f);
-                       mMap.animateCamera(mylocation);
-                   }
-               }catch (IOException e){
-                   e.printStackTrace();
+               if (marker != null){
+                   marker.remove();
+                   marker = mMap.addMarker(new MarkerOptions().position(latLng).title("My Location"));
+                   mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,18.0f));
+               }
+               else {
+                   marker = mMap.addMarker(new MarkerOptions().position(latLng).title("You are here"));
+                   mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,18.0f));
                }
            }
 
@@ -161,7 +145,7 @@ public class Sample2Activity extends AppCompatActivity implements OnMapReadyCall
     private void initMap(){
         Log.d(TAG, "initMap: initializing map");
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(Sample2Activity.this);
+        mapFragment.getMapAsync(UserMapInterface.this);
     }
     private void getLocationPermission(){
         Log.d(TAG, "getLocationPermission: getting location permissions");

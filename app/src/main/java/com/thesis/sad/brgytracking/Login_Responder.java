@@ -20,6 +20,7 @@ import com.thesis.sad.brgytracking.Model.brgy_login;
 public class Login_Responder extends AppCompatActivity {
 
     private Button button_login;
+    private static String Username;
     private EditText text_username;
     private EditText text_password;
     FirebaseDatabase database;
@@ -31,7 +32,6 @@ public class Login_Responder extends AppCompatActivity {
         setContentView(R.layout.activity_login__responder);
         TextView btn_register = (TextView) findViewById(R.id.sign_up);
 
-
         button_login = (Button)findViewById(R.id.btn_login);
         database = FirebaseDatabase.getInstance();
 
@@ -39,9 +39,12 @@ public class Login_Responder extends AppCompatActivity {
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 text_username = findViewById(R.id.text_username);
                 text_password = findViewById(R.id.text_password);
                 Login(text_username.getText().toString(), text_password.getText().toString());
+
+
             }
         });
 
@@ -57,6 +60,10 @@ public class Login_Responder extends AppCompatActivity {
         });
     }
 
+    public static String getUsername(){
+        return Username;
+    }
+
     private void Login(final String username, final String password) {
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -66,17 +73,23 @@ public class Login_Responder extends AppCompatActivity {
                         brgy_login login = dataSnapshot.child(username).getValue(brgy_login.class);
                         if(login.getPassword().equals(password)){
                             Toast.makeText(Login_Responder.this, "Success Login!", Toast.LENGTH_SHORT).show();
-
+                            Username = text_username.getText().toString();
+                            Intent i = new Intent(Login_Responder.this,BrgyMapInterface.class);
+                            startActivity(i);
+                            text_username.getText().clear();
+                            text_password.getText().clear();
                         }else{
                             Toast.makeText(Login_Responder.this, "Invalid Password!", Toast.LENGTH_SHORT).show();
+                            text_username.getText().clear();
+                            text_password.getText().clear();
 
                         }
-
-
                     }
 
                 }else {
                     Toast.makeText(Login_Responder.this, "Username is not registered", Toast.LENGTH_SHORT).show();
+                    text_username.getText().clear();
+                    text_password.getText().clear();
                 }
             }
 

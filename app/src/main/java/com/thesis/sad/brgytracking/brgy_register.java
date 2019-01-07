@@ -44,10 +44,6 @@ public class brgy_register extends AppCompatActivity implements ConnectionCallba
     private FusedLocationProviderClient fusedLocationProviderClient;
 
 
-    private TextView longitude;
-    private TextView latitude;
-
-
     private Button btn_location;
     private EditText editext_username;
     private EditText edittext_password;
@@ -60,8 +56,6 @@ public class brgy_register extends AppCompatActivity implements ConnectionCallba
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brgy_register);
 
-        longitude = findViewById(R.id.text_long);
-        latitude = findViewById(R.id.text_lat);
 
         googleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -157,8 +151,6 @@ public class brgy_register extends AppCompatActivity implements ConnectionCallba
                       Toast.makeText(brgy_register.this, "Location enabled!", Toast.LENGTH_SHORT).show();
                       edittext_longitude = findViewById(R.id.longitude);
                       edittext_lattitude = findViewById(R.id.lattitude);
-                      latitude.setText(String.valueOf(location.getLatitude()));
-                      longitude.setText(String.valueOf(location.getLongitude()));
                       edittext_lattitude.setText(String.valueOf(location.getLatitude()));
                       edittext_longitude.setText(String.valueOf(location.getLongitude()));
                   }

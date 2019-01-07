@@ -30,10 +30,9 @@ public class UserInformation extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent help = new Intent(UserInformation.this, Userinterface.class);
+                Intent help = new Intent(UserInformation.this, UserMapInterface.class);
                 startActivity(help);
 
-                Toast.makeText(UserInformation.this, "Hello! there! ", Toast.LENGTH_SHORT).show();
 
                /* firstname = findViewById(R.id.editText_firstname);
                 lastname = findViewById(R.id.editText_lastname);
