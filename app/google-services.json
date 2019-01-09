@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "1069572702613-s4sico6h33fi3krakr537h4nil25pk3r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thesis.sad.brgytracking",
+            "certificate_hash": "9aec25d3c92ee2156e3a67e0977d3ed5e46fe7ea"
+          }
+        },
+        {
           "client_id": "1069572702613-hev1qeb03bl0p44m7fi5c1fcg1bs64s5.apps.googleusercontent.com",
           "client_type": 3
         }

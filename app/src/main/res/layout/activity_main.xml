@@ -7,6 +7,15 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btn_hospital"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Hospi"
+        android:textAllCaps="false"
+        android:layout_marginBottom="60dp"/>
+
+    <Button
         android:id="@+id/btn_user"
         android:layout_width="155dp"
         android:layout_height="wrap_content"

@@ -15,15 +15,25 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.thesis.sad.brgytracking.Hospital.MainHospital;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity" ;
     private Button button_user;
+    private Button hospital;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        hospital = findViewById(R.id.btn_hospital);
+        hospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,MainHospital.class));
+            }
+        });
 
         getLocationPermission();
         button_user = findViewById(R.id.btn_user);
@@ -63,10 +73,8 @@ public class MainActivity extends AppCompatActivity {
             }else{
                 ActivityCompat.requestPermissions(this,permissions,LOCATION_PERMISSION_REQUEST_CODE);
             }
-
         }
     }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         Log.d(TAG, "onRequestPermissionsResult: called.");

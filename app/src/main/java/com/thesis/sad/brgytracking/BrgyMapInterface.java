@@ -30,7 +30,6 @@ import com.thesis.sad.brgytracking.Model.brgy_login;
 
 import java.io.IOException;
 import java.util.List;
-
 public class BrgyMapInterface extends AppCompatActivity implements OnMapReadyCallback,LocationListener,GoogleMap.OnMarkerClickListener {
 
     private DatabaseReference mUsers;

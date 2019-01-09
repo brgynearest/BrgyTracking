@@ -35,7 +35,8 @@
         <activity android:name=".SampleActivity" />
         <activity android:name=".UserMapInterface" />
         <activity android:name=".Userinterface" />
-        <activity android:name=".BrgyMapInterface"></activity>
+        <activity android:name=".BrgyMapInterface" />
+        <activity android:name=".Hospital.MainHospital"></activity>
     </application>
 
 </manifest>
