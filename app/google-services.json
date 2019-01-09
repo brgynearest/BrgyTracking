@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1069572702613",
+    "firebase_url": "https://brgytracking.firebaseio.com",
+    "project_id": "brgytracking",
+    "storage_bucket": "brgytracking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069572702613:android:c4422e79a6e9730c",
+        "android_client_info": {
+          "package_name": "com.thesis.sad.brgytracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069572702613-6r1m4j6ge9fqc1nhgm310idsnf5261dk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thesis.sad.brgytracking",
+            "certificate_hash": "b1e5093ca6c7bf70af7e455d1ba5cde083be5491"
+          }
+        },
+        {
+          "client_id": "1069572702613-hev1qeb03bl0p44m7fi5c1fcg1bs64s5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGAFPZoNG_tY6ULWF6c-8wHFEpeTQ3EbE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069572702613-hev1qeb03bl0p44m7fi5c1fcg1bs64s5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

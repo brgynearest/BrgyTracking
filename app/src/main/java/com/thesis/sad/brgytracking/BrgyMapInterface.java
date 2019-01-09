@@ -72,11 +72,8 @@ public class BrgyMapInterface extends AppCompatActivity implements OnMapReadyCal
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
-
     }
 
     private Boolean mLocationPermissionGranted = false;
@@ -114,7 +111,6 @@ public class BrgyMapInterface extends AppCompatActivity implements OnMapReadyCal
             }else{
                 ActivityCompat.requestPermissions(this,permissions,LOCATION_PERMISSION_REQUEST_CODE);
             }
-
         }
     }
 
