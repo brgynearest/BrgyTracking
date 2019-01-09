@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void getLocationPermission(){
 
-        Toast.makeText(this, "Try", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "getLocationPermission: getting location permissions");
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION};
 
