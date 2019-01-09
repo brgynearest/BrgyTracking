@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        Toast.makeText(this, "Hoy!", Toast.LENGTH_SHORT).show();
         getLocationPermission();
 
         button_user = findViewById(R.id.btn_user);
