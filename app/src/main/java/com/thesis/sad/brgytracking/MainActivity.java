@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         getLocationPermission();
         Toast.makeText(this, "Try toast", Toast.LENGTH_SHORT).show();
+
         button_user = findViewById(R.id.btn_user);
         button_user.setOnClickListener(new View.OnClickListener() {
             @Override
