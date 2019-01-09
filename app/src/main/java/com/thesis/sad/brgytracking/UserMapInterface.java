@@ -113,11 +113,10 @@ public class UserMapInterface extends AppCompatActivity implements OnMapReadyCal
 
                if (marker != null){
                    marker.remove();
-                   marker = mMap.addMarker(new MarkerOptions().position(latLng).title("My Location"));
-                   mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,18.0f));
+                   marker = mMap.addMarker(new MarkerOptions().position(latLng).title("You are here").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
                }
                else {
-                   marker = mMap.addMarker(new MarkerOptions().position(latLng).title("You are here"));
+                   marker = mMap.addMarker(new MarkerOptions().position(latLng).title("You are here").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,18.0f));
                }
            }
